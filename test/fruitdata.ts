@@ -1,4 +1,5 @@
 import { Fruit } from "../src/types";
+
 export const fruitData: Fruit[] = [
   {
     type: "apple",

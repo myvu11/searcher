@@ -6,7 +6,7 @@ import {
   LessThan,
   GreaterThanOrEqual,
   LessThanOrEqual,
-} from "../src/searcher";
+} from "../src/matcher";
 import { Fruit } from "../src/types";
 
 describe("Matcher Tests", () => {
@@ -15,11 +15,13 @@ describe("Matcher Tests", () => {
     assert.strictEqual(matcher.evaluate({ type: "apple" }), true);
     assert.strictEqual(matcher.evaluate({ type: "banana" }), false);
   });
+
   it("Equal matcher with number works correctly", () => {
     const matcher = new Equal<{ weight: number }>("weight", 100);
     assert.strictEqual(matcher.evaluate({ weight: 100 }), true);
     assert.strictEqual(matcher.evaluate({ weight: 150 }), false);
   });
+
   it("And matcer works correctly", () => {
     const matcher = new And<{ type: string; color: string }>([
       new Equal("type", "apple"),
