@@ -9,6 +9,7 @@
     "typescript": "^5.9.2"
   },
   "scripts": {
+    "start": "ts-node src/index.ts",
     "test": "mocha -r tsx test/**"
   }
 }
